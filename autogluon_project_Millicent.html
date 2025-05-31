@@ -7978,7 +7978,7 @@ Note: you may need to restart the kernel to use updated packages.
 
 <span class="n">kaggle_json_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s2">"~"</span><span class="p">),</span> <span class="s2">".kaggle"</span><span class="p">,</span> <span class="s2">"kaggle.json"</span><span class="p">)</span>
 <span class="n">kaggle_username</span> <span class="o">=</span> <span class="s2">"millicentaumaomondi"</span>
-<span class="n">kaggle_key</span> <span class="o">=</span> <span class="s2">"1212b14de451104fad203bcba74c5a7a"</span>
+<span class="n">kaggle_key</span> <span class="o">=</span> <span class="c1">#add your kaggle key</span>
 <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">kaggle_json_path</span><span class="p">):</span>
     <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Kaggle API key not found at </span><span class="si">{</span><span class="n">kaggle_json_path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
