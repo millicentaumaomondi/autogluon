@@ -23,8 +23,7 @@ The model's performance improved slightly. This was due to the additional featur
 ## Hyper parameter tuning
 ### How much better did your model preform after trying different hyper parameters?
 TODO: Add your explanation
-Tuning the hyperparameters improved the model's performance as the score values increased.
-Adding features improved the score slightly, from -49.001 to -48.984, and hyperparameter optimization (hpo) gave the biggest improvement to -48.767.
+Tuning the hyperparameters improved the model's performance as the kaggle score values decreased. Initially it was 1.84630 and after hyperparameter tuning, it decreased to 0.62657.
 
 
 ### If you were given more time with this dataset, where do you think you would spend more time?
@@ -32,11 +31,18 @@ TODO: Add your explanation
 Finetuning step: Experimenting with different hyperparameters 
 
 ### Create a table with the models you ran, the hyperparameters modified, and the kaggle score.
+pd.DataFrame({
+    "model": ["initial", "add_features", "hpo"],
+    "hpo1": [None, None, "learning_rate"],
+    "hpo2": [None, None, "max_depth"],
+    "hpo3": [None, None, "model_type=['GBM','CAT','XGB']"], 
+    "score": [1.84630 , 0.91047 , 0.62657]  
+})
 |model|hpo1|hpo2|hpo3|score|
 |--|--|--|--|--|
-|initial|num_bag_folds=8|num_stack_levels=1|num_bag_sets=1|-49.00|
-|add_features|num_bag_folds=8|num_stack_levels=1|num_bag_sets=1|-48.98|
-|hpo|num_bag_folds=5|num_stack_levels=2|num_bag_sets=1|-48.77|
+|initial|None|None|learning_rate|1.84630|
+|add_features|None|None|max_depth|0.91047|
+|hpo|None|None|model_type=['GBM','CAT','XGB']|0.62657|
 
 ### Create a line plot showing the top model score for the three (or more) training runs during the project.
 
@@ -52,4 +58,4 @@ TODO: Replace the image below with your own.
 
 ## Summary
 TODO: Add your explanation
-In this projectt we built and optimied a bike sharing demand model using Autogluon and submitted the results to kaggle.The best model was WeightedEnsemble_L3.  We started with a baseline model using default settings, and achieved an initial RMSE score of -49.00. By adding additional features like day, manth and year from the dataerime column, the model's performance slightly to an RMSE score of -48.98. Optimizing the hyperparameters improved the RMSE to -48.77. 
+In this projectt we built and optimied a bike sharing demand model using Autogluon and submitted the results to kaggle.The best model was WeightedEnsemble_L3. By adding additional features like hour, day, month and year from the dataerime column, the model's performance improved as the kaggle score moved from 1.84630 to 0.91047. Hyperparameter tuning further enhanced the model's performance as it reduced to 0.62657.
